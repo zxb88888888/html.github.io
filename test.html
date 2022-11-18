@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>Start Popup</title>
+</head>
+<body>
+<div id="checkblocked">
+    <p>Please allow blocked content!</p>
+</div>
+
+<script>
+  var windowObjectReference;
+  var strWindowFeatures = "menubar=no,location=no,resizable=no,scrollbars=no,status=yes,width=600,height=500";
+
+ function openRequestedPopup() {
+      windowObjectReference = window.open("popup.html", "pop1", strWindowFeatures);
+ }
+ checkblocked.style.display = "none"
+// Check the browser type
+var ua = window.navigator.userAgent;
+var msie = ua.indexOf("MSIE ");
+if (msie < 0) {
+    msie = ua.indexOf("Trident/");
+ }
+if (msie > 0) {
+   openRequestedPopup();
+} else {
+    alert("Please use IEMode!")
+}  
+</script>
+
+</body>
+</html>
+

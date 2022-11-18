@@ -1,0 +1,47 @@
+<html>
+<head>
+	<title>Popup 1</title>
+</head>
+<body>
+  <div id="checkblocked">
+    <p>Please allow blocked content!</p>
+</div>  
+<p></p>
+<button type="button" onclick="clickhere()">click here to show pop&&test modal dialog! wait 3 seconds</button>
+<p></p>
+<button type="button" onclick="clickhere2()">click here to test modal dialog! wait 5 seconds</button>
+<p></p>
+<button type="button" onclick="clickhere3()">click here to test alert! wait 5 seconds</button>
+<p></p>
+<button type="button" onclick="clickhere4()">click here to test focus! wait 5 seconds</button>
+<form action="demo_form.php">
+  First name: <input type="text" name="fname"><br>
+  Last name: <input type="text" name="lname"><br>
+  <input type="submit" value="提交">
+</form>
+<script>
+ window.opener.open('', '_self', '');
+ window.opener.close(); 
+ checkblocked.style.display = "none"  
+ function showmodal(){
+  window.showModalDialog('modal.html','width=100,height=150,toolbar=0,menubar=0,location=0,status=1,scrollbars=0,resizable=0,left=0,top=0')
+ }
+ function clickhere() {
+    window.open("https://www.bing.com", "popop 3")
+    setTimeout("showmodal()",3000)
+ }
+ function clickhere2() {
+    setTimeout("showmodal()",5000)
+ }
+ function clickhere3() {
+    setTimeout("alert('test')",5000)
+ }
+ function clickhere4() {
+    setTimeout("alert('window.focus()')",5000)
+ }
+//window.close();
+</script>
+</body>
+</html>
+
+<script>
